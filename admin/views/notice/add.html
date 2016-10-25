@@ -1,0 +1,24 @@
+<?php $this->load->view('inc/top.html') ?>
+
+<div class="content f-cb">
+	<!-- 载入左边模板 -->
+	<?php $this->load->view($this->uri->segment(1).'/left.html'); ?>
+	<div class="main f-fr">
+		<div class="panel panel-default">
+			<div class="panel-heading f-fwb">添加公告</div>
+			<div class="panel-body">
+				<div class="districts-list" style="padding:30px;" >
+						
+						<form method="post" action="toadd" >
+							<div><span style="font-size:20px;" >请输入公告内容：</span></div><br>
+							<div><textarea type="text" name="notice_content" style="width:250px;" ></textarea></div><br>
+							<div><input type="submit" value="添加" ></input></div>
+						</form>
+						
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<?php $this->load->view('inc/buttom.html'); ?>

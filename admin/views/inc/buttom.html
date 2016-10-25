@@ -1,0 +1,18 @@
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="left" style="display:none"><?php echo $this->uri->segment(2);?></div>
+<div id="top" style="display:none"><?php echo $this->uri->segment(1);?></div>
+</body>
+</html>
+<script>
+	$(function(){
+		var left = $('#left').html();
+		$('a[name='+left+']').addClass('cur');
+		$('a[name='+left+']').attr('href','javascript:;');
+		var top = $('#top').html();
+		$('li[name='+top+']').addClass('active');
+	})
+</script>

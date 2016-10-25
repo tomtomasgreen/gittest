@@ -1,0 +1,249 @@
+<?php $this->load->view('inc/top.html') ?>
+
+<div class="content f-cb">
+	<!-- 载入左边模板 -->
+	<?php $this->load->view($this->uri->segment(1).'/left.html'); ?>
+	<div class="main f-fr">
+		<div class="panel panel-default">
+			<div class="panel-heading f-fwb">添加医生</div>
+			<div class="panel-body">
+				<!-- 内容开始 -->
+					
+				  <form class="form-horizontal" action="<?php if(isset($id)){A_U('doctor/edit_doctor');}else{A_U('doctor/add_doctor');} ?>" method="post">
+				    <fieldset>
+				      <div id="legend" class="">
+				        <legend class="">
+				        	<?php 
+				        		if(isset($id)){
+				        			echo '更该医生信息';
+				        			echo '<div style="display:none"><input type="text" name="id" value="'.$id.'"></div>';
+				        		}else{
+				        			echo '添加医生';
+				        		}
+				        	 ?>
+				        </legend>
+				      </div>
+
+				    <div class="control-group">
+
+				          <!-- Text input-->
+				          <label class="control-label" for="input01"><span style='color:red;'>*</span>手机</label>
+				          <div class="controls">
+				            <input type="text" placeholder="请输入11位有效地手机号" class="input-xlarge" name="mobile" value="<?php echo @$data[0]['mobile'] ?>">
+				            <p class="help-block"><?php echo form_error('mobile','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+				        </div>
+				    <div class="control-group">
+
+				          <!-- Text input-->
+				          <label class="control-label" for="input01"><span style='color:red;'>*</span>密码</label>
+				          <div class="controls">
+				            <input type="password" placeholder="请输入6~25字符的密码" class="input-xlarge" name="password">
+				            <p class="help-block"><?php echo form_error('password','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+				        </div>
+				    <div class="control-group">
+
+				          <!-- Text input-->
+				          <label class="control-label" for="input01"><span style='color:red;'>*</span>名字</label>
+				          <div class="controls">
+				            <input type="text" placeholder="请输入2~10汉字" class="input-xlarge" name="username" value="<?php echo @$data[0]['username'] ?>">
+				            <p class="help-block"><?php echo form_error('username','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+				        </div>
+				    <div class="control-group">
+
+				          <!-- Text input-->
+				          <label class="control-label" for="input01">邮箱</label>
+				          <div class="controls">
+				            <input type="email" placeholder="请输入有效地邮箱地址" class="input-xlarge" name="email" value="<?php echo @$data[0]['email'] ?>">
+				            <p class="help-block"><?php echo form_error('email','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+				        </div>
+				    <div class="control-group">
+
+				          <!-- Select Basic -->
+				          <label class="control-label">出生年份</label>
+				          <div class="controls">
+				            <select class="input-xlarge" name="birthyear">
+						      <option>1997</option>
+						      <option>1996</option>
+						      <option>1995</option>
+						      <option>1994</option>
+						      <option>1993</option>
+						      <option>1992</option>
+						      <option>1991</option>
+						      <option>1990</option>
+						      <option>1989</option>
+						      <option>1988</option>
+						      <option>1987</option>
+						      <option>1986</option>
+						      <option>1985</option>
+						      <option>1984</option>
+						      <option>1983</option>
+						      <option>1982</option>
+						      <option>1981</option>
+						      <option>1980</option>
+						      <option>1979</option>
+						      <option>1978</option>
+						      <option>1977</option>
+						      <option>1976</option>
+						      <option>1975</option>
+						      <option>1974</option>
+						      <option>1973</option>
+						      <option>1972</option>
+						      <option>1971</option>
+						      <option>1970</option>
+						      <option>1969</option>
+						      <option>1968</option>
+						      <option>1967</option>
+						      <option>1966</option>
+						      <option>1965</option>
+						      <option>1964</option>
+						      <option>1963</option>
+						      <option>1962</option>
+						      <option>1961</option>
+						      <option>1960</option>
+						      <option>1959</option>
+						      <option>1958</option>
+						      <option>1957</option>
+						      <option>1956</option>
+						      <option>1955</option>
+						      <option>1954</option>
+						      <option>1953</option>
+						      <option>1952</option>
+						      <option>1951</option>
+						      <option>1950</option>
+						      <option>1949</option>
+						      <option>1948</option>
+						      <option>1947</option>
+						      <option>1946</option>
+						      <option>1945</option>
+						      <option>1944</option>
+						      <option>1943</option>
+						      <option>1942</option>
+						      <option>1941</option>
+						      <option>1940</option>
+						      <option>1939</option>
+						      <option>1938</option>
+						      <option>1937</option>
+						      <option>1936</option>
+						      <option>1935</option>
+						      <option>1934</option>
+						      <option>1933</option>
+						      <option>1932</option>
+						      <option>1931</option>
+						      <option>1930</option>
+						      <option>1929</option>
+						      <option>1928</option>
+						      <option>1927</option>
+						      <option>1926</option>
+						      <option>1925</option>
+						      <option>1924</option>
+						      <option>1923</option>
+						      <option>1922</option>
+						      <option>1921</option>
+						      <option>1920</option>
+				     		</select>
+				          </div>
+
+				        </div>
+
+				    <div class="control-group">
+
+				          <!-- Select Basic -->
+				          <label class="control-label">出生月份</label>
+				          <div class="controls">
+				            <select class="input-xlarge" name="birthmonth">
+						      <option>1</option>
+						      <option>2</option>
+						      <option>3</option>
+						      <option>4</option>
+						      <option>5</option>
+						      <option>6</option>
+						      <option>7</option>
+						      <option>8</option>
+						      <option>9</option>
+						      <option>10</option>
+						      <option>11</option>
+						      <option>12</option>
+						     </select>
+				          </div>
+				        </div>
+				    <div class="control-group">
+
+				          <!-- Text input-->
+				          <label class="control-label" for="input01">所属医院</label>
+				          <div class="controls">
+				            <input type="text" placeholder="请填写医生所属医院" class="input-xlarge" name="hospital" value="<?php echo @$data[0]['hospital'] ?>">
+				            <p class="help-block"><?php echo form_error('hospital','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+				        </div>
+
+				    <div class="control-group">
+
+				          <!-- Search input-->
+				          <label class="control-label">所属科室</label>
+				          <div class="controls">
+				            <input type="text" placeholder="请填写医生所属科室" class="input-xlarge" name="department" value="<?php echo @$data[0]['department'] ?>">
+				            <p class="help-block"><?php echo form_error('department','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+
+				        </div>
+
+				    <div class="control-group">
+
+				          <!-- Text input-->
+				          <label class="control-label" for="input01">医生职位</label>
+				          <div class="controls">
+				            <input type="text" placeholder="请填写医生职位" class="input-xlarge" name="job" value="<?php echo @$data[0]['job'] ?>">
+				            <p class="help-block"><?php echo form_error('job','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+				        </div>
+
+				    <div class="control-group">
+
+				          <!-- Text input-->
+				          <label class="control-label" for="input01">医院地址</label>
+				          <div class="controls">
+				            <input type="text" placeholder="请填写医生所属医院地址" class="input-xlarge" name="address" value="<?php echo @$data[0]['address'] ?>">
+				            <p class="help-block"><?php echo form_error('address','<span style="color:red;">','</span>'); ?></p>
+				          </div>
+				        </div>
+
+				    <div class="control-group">
+				          <label class="control-label">是否主任</label>
+				          <div class="controls">
+				      <!-- Inline Radios -->
+				      <label class="radio inline">
+				        <input type="radio" value="0" name="ismaster" <?php if(@$data[0]['id'] == 0){echo 'checked="checked"';} ?>>
+				        否
+				      </label>
+				      <label class="radio inline">
+				        <input type="radio" value="1" name="ismaster" <?php if(@$data[0]['id'] == 1){echo 'checked="checked"';} ?>>
+				        是
+				      </label>
+				  </div>
+				        </div>
+
+				     <div class="control-group">
+			          <label class="control-label"></label>
+
+			          <!-- Button -->
+			          <div class="controls">
+			            <input type="submit" value="添加" class="btn btn-success">
+			          </div>
+			        </div>
+
+				    </fieldset>
+				  </form>
+
+		
+
+				<!-- 内容结束 -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php $this->load->view('inc/buttom.html'); ?>

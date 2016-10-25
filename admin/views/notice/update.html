@@ -1,0 +1,24 @@
+<?php $this->load->view('inc/top.html') ?>
+
+<div class="content f-cb">
+	<!-- 载入左边模板 -->
+	<?php $this->load->view($this->uri->segment(1).'/left.html'); ?>
+	<div class="main f-fr">
+		<div class="panel panel-default">
+			<div class="panel-heading f-fwb">公告管理</div>
+			<div class="panel-body">
+				<div class="districts-list" style="padding:30px;" >
+						
+						<form method="post" action="to_update?id=<?php echo $notice_update['id']; ?>" >
+							<div><span style="font-size:20px;" >请输入公告内容：</span></div><br>
+							<div><input type="text" name="notice_content" value="<?php echo $notice_update['content']; ?>" style="width:250px;" ></input></div><br>
+							<div><input type="submit" value="修改" ></input></div>
+						</form>
+						
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<?php $this->load->view('inc/buttom.html'); ?>

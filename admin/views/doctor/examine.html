@@ -1,0 +1,58 @@
+<?php $this->load->view('inc/top.html') ?>
+<div class="content f-cb">
+	<!-- 载入左边模板 -->
+	<?php $this->load->view($this->uri->segment(1).'/left.html'); ?>
+	<div class="main f-fr">
+		<div class="panel panel-default">
+			<div class="panel-heading f-fwb">所有医生</div>
+			<div class="panel-body">
+				<div class="districts-list">
+					
+				</div>
+				<div class="districts-list">
+					<table class="table table-striped table-hover table-bordered">
+						<thead>
+							<tr>
+								<th width="5%">ID</th>
+								<th width="8%">用户名</th>
+								<th width="10%">手机号</th>
+								<th width="10%">所属医院</th>
+								<th width="10%">所属科室</th>
+								<th width="15%">注册时间</th>
+								<th width="10%">积分</th>
+								<th width="10%">职位</th>
+								<!--<th width="10%">是否科长</th>-->
+								<th width="30%">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach($data as $k => $v): ?>
+								<tr>
+									<td><?php echo $v['id'] ?></td>
+									<td><?php echo $v['username'] ?></td>
+									<td><?php echo $v['mobile'] ?></td>
+									<td><?php echo $v['hospital'] ?></td>
+									<td><?php echo $v['department'] ?></td>
+									<td><?php echo date('Y-m-d H:i',$v['createtime']) ?></td>
+									<td><?php echo $v['money'] ?></td>
+									<td><?php echo $v['job'] ?></td>
+									<!-- <td><?php if($v['ismaster'] == 0){echo '否';}else{echo '是';}; ?></td>-->
+									<td><a href="#" onClick="examine(<?php echo $v['id']; ?>)" >审核</a></td>
+								</tr>
+							<?php endforeach; ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function examine(id){
+	var del = confirm("确定要这么做吗？");
+	if(del){
+		location.href = "examine_do?id="+id ;
+	}
+}
+</script>
+<?php $this->load->view('inc/buttom.html'); ?>
